@@ -1,0 +1,240 @@
+LAN exposure summary:
+  SSH trap: 0.0.0.0:2222
+  FTP trap: 0.0.0.0:2121
+  HTTP trap: 0.0.0.0:8080
+  Dashboard: 127.0.0.1:5000 (local-only)
+{"timestamp": "2026-07-07T01:29:02.962Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "AegisTrap starting", "local_ip": "10.47.153.65", "ssh_port": 2222, "ftp_port": 2121, "http_port": 8080, "https_port": 8443}
+{"timestamp": "2026-07-07T01:29:02.963Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "SSH listener started", "host": "0.0.0.0", "port": 2222}
+{"timestamp": "2026-07-07T01:29:02.963Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "SSH listening", "host": "0.0.0.0", "port": 2222}
+{"timestamp": "2026-07-07T01:29:02.963Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "FTP listener started", "host": "0.0.0.0", "port": 2121}
+{"timestamp": "2026-07-07T01:29:02.964Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP listener started", "host": "0.0.0.0", "port": 8080}
+{"timestamp": "2026-07-07T01:29:02.964Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "FTP listening", "host": "0.0.0.0", "port": 2121}
+{"timestamp": "2026-07-07T01:29:02.964Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP listening", "host": "0.0.0.0", "port": 8080}
+{"timestamp": "2026-07-07T01:29:02.964Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTPS listener started", "host": "0.0.0.0", "port": 8443}
+{"timestamp": "2026-07-07T01:29:02.970Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTPS listening", "host": "0.0.0.0", "port": 8443}
+{"timestamp": "2026-07-07T01:29:03.130Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Dashboard started", "host": "127.0.0.1", "port": 5000}
+ * Serving Flask app 'aegistrap.dashboard.app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [07/Jul/2026 06:59:20] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 06:59:20] "GET /api/alerts?limit=10 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 06:59:20] "GET /api/analytics HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:00:20] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:00:20] "GET /api/alerts?limit=10 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:00:20] "GET /api/analytics HTTP/1.1" 200 -
+{"timestamp": "2026-07-07T01:30:38.081Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "bcccd80c0de44519b01e0ee27d85ff85", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28652, "dest_port": 2222}
+Exception (server): Error reading SSH protocol banner[WinError 10053] An established connection was aborted by the software in your host machine
+Traceback (most recent call last):
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\transport.py", line 2369, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\packet.py", line 663, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\transport.py", line 2185, in run
+    self._check_banner()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\transport.py", line 2373, in _check_banner
+    raise SSHException(
+        "Error reading SSH protocol banner" + str(e)
+    )
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[WinError 10053] An established connection was aborted by the software in your host machine
+
+{"timestamp": "2026-07-07T01:30:38.093Z", "level": "ERROR", "logger": "aegistrap", "project": "aegistrap", "message": "SSH emulator error", "error": "Error reading SSH protocol banner[WinError 10053] An established connection was aborted by the software in your host machine", "source_ip": "127.0.0.1"}
+{"timestamp": "2026-07-07T01:30:38.106Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "9cfdab9c46fb4ad084089f30be536f85", "protocol": "ftp", "source_ip": "127.0.0.1", "source_port": 28651, "dest_port": 2121}
+{"timestamp": "2026-07-07T01:30:38.107Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "bcccd80c0de44519b01e0ee27d85ff85", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "error", "severity": "informational", "duration_ms": 340, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.108Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "9cfdab9c46fb4ad084089f30be536f85", "protocol": "ftp", "source_ip": "127.0.0.1", "outcome": "disconnected", "severity": "informational", "duration_ms": 369, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.440Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "d97a6c5fbfcd4b14ad88c08c4274c5b6", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28662, "dest_port": 2222}
+Exception (server): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\transport.py", line 2369, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\transport.py", line 2185, in run
+    self._check_banner()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\agraw\AppData\Local\Programs\Python\Python313\Lib\site-packages\paramiko\transport.py", line 2373, in _check_banner
+    raise SSHException(
+        "Error reading SSH protocol banner" + str(e)
+    )
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+{"timestamp": "2026-07-07T01:30:38.449Z", "level": "ERROR", "logger": "aegistrap", "project": "aegistrap", "message": "SSH emulator error", "error": "Error reading SSH protocol banner", "source_ip": "127.0.0.1"}
+{"timestamp": "2026-07-07T01:30:38.450Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "d97a6c5fbfcd4b14ad88c08c4274c5b6", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "error", "severity": "informational", "duration_ms": 52, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.617Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "3366a2478d2c4034a9f43e9eff789fb5", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28663, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:38.619Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /admin HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:38.620Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "3366a2478d2c4034a9f43e9eff789fb5", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 51, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.680Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "8ad4311fd34948218fedb2b2f459ccad", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28664, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:38.682Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /login HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:38.687Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "8ad4311fd34948218fedb2b2f459ccad", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 51, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.743Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "9c3b4f1829694aa993ed200ef62044b1", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28665, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:38.744Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /backup HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:38.746Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "9c3b4f1829694aa993ed200ef62044b1", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 55, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.822Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "0557f8ada1b0405788a2b0ecad4bcb71", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28666, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:38.823Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /config HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:38.824Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "0557f8ada1b0405788a2b0ecad4bcb71", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 56, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.909Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "350ade593f594c82ac56659c779bccd3", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28667, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:38.911Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /phpmyadmin HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:38.913Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "350ade593f594c82ac56659c779bccd3", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 62, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:38.961Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "5dc9c6caacf547edb9fe262dddec6cf8", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28668, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:38.963Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /wp-login.php HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:38.964Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "5dc9c6caacf547edb9fe262dddec6cf8", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 49, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.035Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "f0d5612616f14b8285a447ae6f4d13c1", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28669, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.035Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /robots.txt HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:39.037Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "f0d5612616f14b8285a447ae6f4d13c1", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 59, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.106Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "03a1d43085d34995809dd787fe12e2c9", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28670, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.107Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /server-status HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:39.108Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "03a1d43085d34995809dd787fe12e2c9", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 56, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.177Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "4694988b4d70408e84bd2bd68e4089b6", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28671, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.178Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /api HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.179Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "4694988b4d70408e84bd2bd68e4089b6", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 52, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.252Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "866f31be68274c7ba1a4cb3b8f202ef3", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28672, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.253Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /test HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.254Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "866f31be68274c7ba1a4cb3b8f202ef3", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 48, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.310Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "7cf068b3e80d4331b078ad8d95aeded0", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28680, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.312Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /dashboard HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:39.314Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "7cf068b3e80d4331b078ad8d95aeded0", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 57, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.394Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "c5ffbb0cfd634fdea6757929dd25f0cc", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28681, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.395Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /index.html HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:39.396Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "c5ffbb0cfd634fdea6757929dd25f0cc", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 67, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.465Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "6438d3d67e0e4b1090c8cd894f5ea1f9", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28682, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.466Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /portal HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.467Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "6438d3d67e0e4b1090c8cd894f5ea1f9", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 49, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.513Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "d9fddeda368b493a952ca8335c4c19c2", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28683, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.514Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /cgi-bin HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.516Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "d9fddeda368b493a952ca8335c4c19c2", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 44, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.569Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "9608079c8a044fb69cae665099039f16", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28684, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.570Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /hidden HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.571Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "9608079c8a044fb69cae665099039f16", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 52, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.640Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "2175c773f2df4456a4e4c8fcc116541a", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28685, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.641Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /secret HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.642Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "2175c773f2df4456a4e4c8fcc116541a", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 67, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.719Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "4055e3f0430241c9b36db5be592e7c20", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28686, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.720Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /dev HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.721Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "4055e3f0430241c9b36db5be592e7c20", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 75, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.815Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "aece3a289e3647e5b561146291c6a2d6", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28687, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.816Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /staging HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.817Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "aece3a289e3647e5b561146291c6a2d6", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 74, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.904Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "4acfbdae45fb44f49c1ebb4648a0cd71", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28688, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.906Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /uploads HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.907Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "4acfbdae45fb44f49c1ebb4648a0cd71", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 72, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:39.989Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "cad474b0a0b7467682e52b0060fee980", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28689, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:39.991Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET /.env HTTP/1.1\" 404 -"}
+{"timestamp": "2026-07-07T01:30:39.993Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "cad474b0a0b7467682e52b0060fee980", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "404", "severity": "informational", "duration_ms": 69, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.413Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "a3aecfba0fac492bbfac3bdc87c433ce", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28698, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.445Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "a3aecfba0fac492bbfac3bdc87c433ce", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 73, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.497Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "442fa8fdfb3e440dbf9c39f58ca20b40", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28699, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.533Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "442fa8fdfb3e440dbf9c39f58ca20b40", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 86, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.577Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "898255e53f44435e903eb7e781be0707", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28700, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.609Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "898255e53f44435e903eb7e781be0707", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 72, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.648Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "935c1d711afc4e2fa286edbbc2466586", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28701, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.676Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "935c1d711afc4e2fa286edbbc2466586", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 65, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.729Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "57aa9640242440e5b4e29d793110a75c", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28702, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.760Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "57aa9640242440e5b4e29d793110a75c", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 81, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.815Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "ca8275cf215c4e01bc5a4cb55abe6300", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28703, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.844Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "ca8275cf215c4e01bc5a4cb55abe6300", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 81, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:40.892Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "d762c7406752439693f56a4ab2d839c5", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28704, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:40.968Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "f983195964ef40d4a4a42391e81e017a", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28705, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.047Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "93ca5f3d134d45ffa97452548640da83", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28706, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.124Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "f2de976eede24c5b937ea83ce0a3864c", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28707, "dest_port": 2222}
+Socket exception: An existing connection was forcibly closed by the remote host (10054)
+{"timestamp": "2026-07-07T01:30:41.208Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "1c98bb8abbfd4d4b877aab8d2ef61f24", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28708, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.301Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "df8bfa6988034008b7d737929dcc4366", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28721, "dest_port": 2222}
+Socket exception: An existing connection was forcibly closed by the remote host (10054)
+{"timestamp": "2026-07-07T01:30:41.379Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "30db6b7b950646c1999564d4de0394a9", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28722, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.462Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "73f81265760f44858c04b63cd0f18abf", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28723, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.505Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "f983195964ef40d4a4a42391e81e017a", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 569, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:41.577Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "bf7e25499d7543caaa84acb8f8ad7cfc", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28724, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.582Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "93ca5f3d134d45ffa97452548640da83", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 581, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:41.662Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "f2de976eede24c5b937ea83ce0a3864c", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 579, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:41.684Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "20fc9154c740486f99fea12ecdca966b", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28725, "dest_port": 2222}
+Socket exception: An existing connection was forcibly closed by the remote host (10054)
+{"timestamp": "2026-07-07T01:30:41.760Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "1c98bb8abbfd4d4b877aab8d2ef61f24", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 595, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:41.778Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "0cf2f2de3dd54689b4c0edd13956bc39", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28726, "dest_port": 2222}
+Socket exception: An existing connection was forcibly closed by the remote host (10054)
+{"timestamp": "2026-07-07T01:30:41.831Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "df8bfa6988034008b7d737929dcc4366", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 568, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:41.883Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "da73a57fadd04657bd20f6345abd7283", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28727, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:41.921Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "30db6b7b950646c1999564d4de0394a9", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 578, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:41.986Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "e66d8ad3a1544bb8930817ffd4ca3c96", "protocol": "ssh", "source_ip": "127.0.0.1", "source_port": 28728, "dest_port": 2222}
+{"timestamp": "2026-07-07T01:30:42.029Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "73f81265760f44858c04b63cd0f18abf", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 595, "bytes_in": 0, "bytes_out": 0}
+Socket exception: An established connection was aborted by the software in your host machine (10053)
+{"timestamp": "2026-07-07T01:30:42.156Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "bf7e25499d7543caaa84acb8f8ad7cfc", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 605, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.190Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "f23f8a62ddf349a1a1fb27b9da295314", "protocol": "ftp", "source_ip": "127.0.0.1", "source_port": 28729, "dest_port": 2121}
+{"timestamp": "2026-07-07T01:30:42.212Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "f23f8a62ddf349a1a1fb27b9da295314", "protocol": "ftp", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 138, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.231Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "20fc9154c740486f99fea12ecdca966b", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 611, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.317Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "28bfd071345241ee8d63c473ab1d1d28", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28732, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:42.318Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "0cf2f2de3dd54689b4c0edd13956bc39", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 580, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.321Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"POST /admin HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:42.323Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "28bfd071345241ee8d63c473ab1d1d28", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 85, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.404Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "56411be66a144672b28b1e5f18a158fa", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28742, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:42.406Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"POST /admin HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:42.407Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "56411be66a144672b28b1e5f18a158fa", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 60, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.425Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "da73a57fadd04657bd20f6345abd7283", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "completed", "severity": "informational", "duration_ms": 609, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.470Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "260ce522fe214e148f4529db64d5e9dc", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28743, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:42.472Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"POST /admin HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:42.473Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "260ce522fe214e148f4529db64d5e9dc", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 63, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.536Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "c4fefb0cfb2a41a19ee89c53d63c7d79", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28744, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:42.538Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"POST /admin HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:42.539Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "c4fefb0cfb2a41a19ee89c53d63c7d79", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 61, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.756Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session started", "session_id": "b1d47f7d481949948a023d6c8213dc24", "protocol": "http", "source_ip": "127.0.0.1", "source_port": 28745, "dest_port": 8080}
+{"timestamp": "2026-07-07T01:30:42.758Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "HTTP request", "request_log": "\"GET / HTTP/1.1\" 200 -"}
+{"timestamp": "2026-07-07T01:30:42.759Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "b1d47f7d481949948a023d6c8213dc24", "protocol": "http", "source_ip": "127.0.0.1", "outcome": "200", "severity": "informational", "duration_ms": 77, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:42.765Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "d762c7406752439693f56a4ab2d839c5", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "no_channel", "severity": "informational", "duration_ms": 1916, "bytes_in": 0, "bytes_out": 0}
+{"timestamp": "2026-07-07T01:30:52.024Z", "level": "INFO", "logger": "aegistrap", "project": "aegistrap", "message": "Session closed", "session_id": "e66d8ad3a1544bb8930817ffd4ca3c96", "protocol": "ssh", "source_ip": "127.0.0.1", "outcome": "disconnected", "severity": "informational", "duration_ms": 10096, "bytes_in": 0, "bytes_out": 0}
+127.0.0.1 - - [07/Jul/2026 07:01:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:11] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:11] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:11] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:11] "GET /api/alerts?limit=10 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:11] "GET /api/analytics HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:12] "GET /sessions HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:12] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:12] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:12] "GET /api/sessions?limit=200 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:13] "GET /credentials HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:13] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:13] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:13] "GET /api/credentials?limit=200 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:14] "GET /commands HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:14] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:14] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:14] "GET /api/commands?limit=200 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:15] "GET /alerts HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:15] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:15] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:15] "GET /api/alerts?limit=200 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:16] "GET /analytics HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:16] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:16] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:16] "GET /api/analytics HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:17] "GET /http HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:17] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:17] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:17] "GET /api/http?limit=200 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:19] "GET /search HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:19] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:19] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /services HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /static/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /api/services HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /api/live HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /api/alerts?limit=10 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 07:01:20] "GET /api/analytics HTTP/1.1" 200 -

